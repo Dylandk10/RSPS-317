@@ -1,0 +1,9 @@
+Create a script plugin, I slight edited Canownueasy's system so you don't use a main file.
+So in skills you have 'skills' for all skills, you could write the script here, but make sure you jar it.
+
+
+P.S goodluck stealing my plugin and releasing, its encrypted with my own syfer code "-".
+
+
+Regards,
+    Alex Kilroy.

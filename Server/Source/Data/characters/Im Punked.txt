@@ -1,0 +1,127 @@
+[ACCOUNT]
+character-username = Im Punked
+character-password = 115107105116116108101115
+
+[CHARACTER]
+character-height = 0
+character-posx = 3204
+character-posy = 3432
+character-rights = 0
+crystal-bow-shots = 0
+skull-timer = 0
+magic-book = 1
+brother-info = 0	0
+brother-info = 1	0
+brother-info = 2	0
+brother-info = 3	0
+brother-info = 4	0
+brother-info = 5	0
+special-amount = 4.5
+selected-coffin = 0
+barrows-killcount = 0
+teleblock-length = 0
+pc-points = 0
+slayerTask = 0
+taskAmount = 0
+magePoints = 30
+autoRet = 0
+barrowskillcount = 0
+flagged = false
+wave = 0
+gwkc = 0
+fightMode = 0
+void = 0	0	0	0	0
+tradeTimer = 0
+pkPoints = 0
+memberStatus = 1
+
+[EQUIPMENT]
+character-equip = 0	-1	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	-1	0	
+character-equip = 4	-1	1	
+character-equip = 5	-1	1	
+character-equip = 6	-1	0	
+character-equip = 7	-1	1	
+character-equip = 8	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
+character-equip = 11	-1	0	
+character-equip = 12	-1	1	
+character-equip = 13	-1	0	
+
+[LOOK]
+character-look = 0	1
+character-look = 1	46
+character-look = 2	56
+character-look = 3	61
+character-look = 4	67
+character-look = 5	70
+character-look = 6	79
+character-look = 7	-1
+character-look = 8	0
+character-look = 9	0
+character-look = 10	0
+character-look = 11	0
+character-look = 12	3
+
+[SKILLS]
+character-skill = 0	1	0
+character-skill = 1	1	0
+character-skill = 2	1	0
+character-skill = 3	10	1300
+character-skill = 4	1	0
+character-skill = 5	1	375
+character-skill = 6	1	0
+character-skill = 7	1	0
+character-skill = 8	1	0
+character-skill = 9	1	0
+character-skill = 10	1	0
+character-skill = 11	1	0
+character-skill = 12	1	0
+character-skill = 13	1	0
+character-skill = 14	1	0
+character-skill = 15	1	0
+character-skill = 16	1	0
+character-skill = 17	1	0
+character-skill = 18	1	0
+character-skill = 19	1	0
+character-skill = 20	1	0
+character-skill = 21	1	0
+character-skill = 22	1	0
+character-skill = 23	1	0
+character-skill = 24	1	0
+
+[ITEMS]
+character-item = 0	842	1
+
+[BANK]
+character-bank = 0	996	5000000
+character-bank = 1	1080	1
+character-bank = 2	1374	1
+character-bank = 3	1128	1
+character-bank = 5	4132	1
+character-bank = 6	1164	1
+character-bank = 7	1322	1
+character-bank = 8	1308	1
+character-bank = 9	883	2000
+character-bank = 10	533	95
+character-bank = 11	2441	5
+character-bank = 12	386	100
+character-bank = 13	557	100
+character-bank = 14	2447	5
+character-bank = 15	3025	5
+character-bank = 16	6686	5
+character-bank = 17	2443	5
+character-bank = 18	2437	5
+character-bank = 19	2445	5
+character-bank = 20	558	100
+character-bank = 21	556	100
+character-bank = 22	555	100
+character-bank = 23	1334	1
+
+[FRIENDS]
+
+[EOF]
+
