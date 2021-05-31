@@ -2,6 +2,10 @@
 
 	This was written and authored by K3LLY
 	please give credit 
+	
+	
+	This is for all the file handling for last man standing mini game. 
+	This file will also handle the bugs and illegal operations of the game
 **/
 
 
@@ -13,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import server.Server;
 import server.util.Misc;
@@ -68,5 +73,41 @@ public class LastManStandingHandler {
 		}
 	}
 	
+	public void getStatsFromFile() {
+		String line = "";
+		String token = "";
+		String token2 = "";
+		String[] token3 = new String[3];
+		boolean EndOfFile = false;
+		BufferedReader characterfile = null;
+		try {	
+			characterfile = new BufferedReader(new FileReader("./Data/lms/"+c.playerName+".txt"));
+			
+			
+			while(EndOfFile == false && line != null) {
+				line = line.trim();
+				int spot = line.indexOf("=");
+				if (spot > -1) {
+					token = line.substring(0, spot);
+					token = token.trim();
+					token2 = line.substring(spot + 1);
+					token2 = token2.trim();
+					token3 = token2.split("\t");
+					c.playerLevel[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
+					c.playerXP[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
+					c.getPA().refreshSkill(Integer.parseInt(token3[0]));
+					c.updateRequired = true;
+				}
+				try {
+					line = characterfile.readLine();
+				} catch(IOException ioexception1) { 
+					EndOfFile = true; 
+				}
+			}
+		} catch (FileNotFoundException e) {
+			Misc.println("Character file is not found");
+		}
+		try { characterfile.close(); } catch(IOException ioexception) { Misc.println("Error closing character file."); }
+	}
 	
 }

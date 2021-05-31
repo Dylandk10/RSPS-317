@@ -2,6 +2,8 @@
 
 	This was written and authored by K3LLY
 	please give credit 
+	
+	This is the lms logic of the game how the stats deaths, teleports, equipment etc is handled. 
 **/
 
 
@@ -28,8 +30,9 @@ public class LastManStanding {
 	
 	public void addPlayer() {
 		playerList.add(c.playerId);
-		lmsH.savePlayerStats();
-		boostStats();
+		//lmsH.savePlayerStats();
+		//boostStats();
+		revertStats();
 	}
 	
 	public void removePlayer() {
@@ -115,8 +118,11 @@ public class LastManStanding {
 		c.playerXP[21] = c.getPA().getXPForLevel(99)+5;
 		c.playerLevel[21] = c.getPA().getLevelForXP(c.playerXP[21]);
 		c.getPA().refreshSkill(21);
-		c.forcedChatUpdateRequired = true;
 		c.updateRequired = true;
 		c.setAppearanceUpdateRequired(true);
+	}
+	
+	public void revertStats() {
+		lmsH.getStatsFromFile();
 	}
 }
