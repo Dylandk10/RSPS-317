@@ -825,10 +825,15 @@ public class PlayerAssistant{
 			Client o = (Client) Server.playerHandler.players[c.killerId];
 			if(o != null) {
 				if (c.killerId != c.playerId)
-				o.pcPoints += 1;
+					o.pcPoints += 1;
 				c.playerKilled = c.playerId;
 				if(o.duelStatus == 5) {
 					o.duelStatus++;
+				}
+				//add a boolean to client for is in lms 
+				//if in lms launch the lms cleanup game function 
+				if(o.inLMS) {
+					Misc.println("player died in lms");
 				}
 			}
 		}
@@ -2182,8 +2187,8 @@ public void castVeng() {
 	public void addStarter() {
 		if (!Connection.hasRecieved1stStarter(Server.playerHandler.players[c.playerId].connectedFrom)) {
 			c.getItems().addItem(995,5000000);
-                	c.getItems().addItem(1079,1);
-                	c.getItems().addItem(1373,1);
+            c.getItems().addItem(1079,1);
+            c.getItems().addItem(1373,1);
 			c.getItems().addItem(1127,1);
 			c.getItems().addItem(1163,1);
 			c.getItems().addItem(1333,1);

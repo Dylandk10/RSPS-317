@@ -47,7 +47,8 @@ public abstract class Player {
 	vengOn = false,
 	addStarter = false,
 	accountFlagged = false,
-	msbSpec = false
+	msbSpec = false,
+	inLMS = false;
 	;
 	
 	

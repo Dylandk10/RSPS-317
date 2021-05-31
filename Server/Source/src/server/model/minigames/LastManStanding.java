@@ -31,8 +31,10 @@ public class LastManStanding {
 	public void addPlayer() {
 		playerList.add(c.playerId);
 		//lmsH.savePlayerStats();
-		//boostStats();
-		revertStats();
+		boostStats();
+		//revertStats();
+		c.inLMS = true;
+		startingGear();
 	}
 	
 	//remove player means they are no longer in the game 
@@ -53,6 +55,17 @@ public class LastManStanding {
 		} else {
 			return false;
 		}
+	}
+	
+	//give the starting gear to a player entering the areana 
+	public void startingGear() {
+		//c.getItems.addItem(4091, 1);
+		//c.getItems.addItem(4093, 1);
+		//c.getItems.addItem(4095, 1);
+		//c.getItems.addItem(3105, 1);
+		
+		//to set equipment 
+		//getItems().setEquipment(playerEquipment[playerRing],1,playerRing);
 	}
 	
 	//boost the players stats to 99 

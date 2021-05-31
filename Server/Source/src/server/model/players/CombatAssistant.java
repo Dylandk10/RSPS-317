@@ -2366,19 +2366,22 @@ public class CombatAssistant{
 				return false;
 			}
 		}
-		if(!Server.playerHandler.players[c.playerIndex].inWild()) {
-			c.sendMessage("That player is not in the wilderness.");
+		
+		//set to make sure they are in lms doesnt matter about single and 
+		
+		if(!Server.playerHandler.players[c.playerIndex].inWild() && !Server.playerHandler.players[c.playerIndex].inLMS()) {
+			c.sendMessage("That player is not in the wilderness or lms.");
 			c.stopMovement();
 			c.getCombat().resetPlayerAttack();
 			return false;
 		}
-		if(!c.inWild()) {
+		if(!c.inWild() && !c.inLMS()) {
 			c.sendMessage("You are not in the wilderness.");
 			c.stopMovement();
 			c.getCombat().resetPlayerAttack();
 			return false;
 		}
-		if(Config.COMBAT_LEVEL_DIFFERENCE) {
+		if(Config.COMBAT_LEVEL_DIFFERENCE && !c.inLMS()) {
 			int combatDif1 = c.getCombat().getCombatDifference(c.combatLevel, Server.playerHandler.players[c.playerIndex].combatLevel);
 			if(combatDif1 > c.wildLevel || combatDif1 > Server.playerHandler.players[c.playerIndex].wildLevel) {
 				c.sendMessage("Your combat level difference is too great to attack that player here.");
