@@ -32,6 +32,8 @@ public class LastManStandingHandler {
 		Misc.println("LastManStandingHandler Running...");
 	}
 	
+	
+	//save the current stats for the player in a file located in the data/lms directory 
 	public void savePlayerStats() {
 		BufferedWriter characterfileR;
 		File characterFile ;
@@ -73,6 +75,7 @@ public class LastManStandingHandler {
 		}
 	}
 	
+	//read the stats from file and reassign the to the player 
 	public void getStatsFromFile() {
 		String line = "";
 		String token = "";

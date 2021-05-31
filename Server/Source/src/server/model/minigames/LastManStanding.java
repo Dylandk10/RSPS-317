@@ -27,7 +27,7 @@ public class LastManStanding {
 		this.lmsH = new LastManStandingHandler(this.c);
 	}
 	
-	
+	//add play inits the play for the game 
 	public void addPlayer() {
 		playerList.add(c.playerId);
 		//lmsH.savePlayerStats();
@@ -35,14 +35,18 @@ public class LastManStanding {
 		revertStats();
 	}
 	
+	//remove player means they are no longer in the game 
 	public void removePlayer() {
 		playerList.remove(playerList.indexOf(c.playerId));
 	}
 	
+	//make sure the players inventory is empty before joining the game 
 	public boolean checkPlayerInvenory() {
 		return c.getItems().playerHasEmptyInv();
 	}
 	
+	
+	//make sure the player is bring no equipment into the game 
 	public boolean checkIfPlayerIsWearingItems() {
 		if(c.playerEquipment[c.playerHat] > 0 || c.playerEquipment[c.playerCape] > 0 || c.playerEquipment[c.playerHat] > 0 || c.playerEquipment[c.playerAmulet] > 0 || c.playerEquipment[c.playerArrows] > 0 || c.playerEquipment[c.playerChest] > 0 || c.playerEquipment[c.playerShield] > 0 || c.playerEquipment[c.playerLegs] > 0 || c.playerEquipment[c.playerHands] > 0 || c.playerEquipment[c.playerFeet] > 0 || c.playerEquipment[c.playerRing] > 0 || c.playerEquipment[c.playerWeapon] > 0) {
 			return true;
@@ -51,6 +55,7 @@ public class LastManStanding {
 		}
 	}
 	
+	//boost the players stats to 99 
 	public void boostStats() {
 		c.playerXP[0] = c.getPA().getXPForLevel(99)+5;
 		c.playerLevel[0] = c.getPA().getLevelForXP(c.playerXP[0]);
@@ -122,6 +127,7 @@ public class LastManStanding {
 		c.setAppearanceUpdateRequired(true);
 	}
 	
+	//revert the players stats to what they were before the game 
 	public void revertStats() {
 		lmsH.getStatsFromFile();
 	}

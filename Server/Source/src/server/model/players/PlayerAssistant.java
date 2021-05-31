@@ -1067,6 +1067,11 @@ public void castVeng() {
 			c.sendMessage("You can't teleport above level "+Config.NO_TELEPORT_WILD_LEVEL+" in the wilderness.");
 			return;
 		}
+		//cannnot teleport out of lms K3LLY added ignore case so i can tele in and out to code the game
+		if(c.inLMS() && !c.playerName.equalsIgnoreCase("test5")) {
+			c.sendMessage("You cannot teleport out of LMS, your here to fight!");
+			return;
+		}
 		if(System.currentTimeMillis() - c.teleBlockDelay < c.teleBlockLength) {
 			c.sendMessage("You are teleblocked and can't teleport.");
 			return;
