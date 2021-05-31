@@ -579,6 +579,11 @@ public void removeAttribute(String key) {
 				getPA().sendFrame126("@yel@Level: "+wildLevel, 199);
 			}
 			getPA().showOption(3, 0, "Attack", 1);
+		
+		//if in lms attack other players 
+		} else if(inLMS()) {
+			getPA().walkableInterface(197);
+			getPA().showOption(3, 0, "Attack", 1);
 		} else if(inPcBoat()) {
     			getPA().walkableInterface(21119);
 		} else if(inPcGame()) {

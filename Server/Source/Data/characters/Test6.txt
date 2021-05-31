@@ -4,11 +4,11 @@ character-password = 116101115116
 
 [CHARACTER]
 character-height = 0
-character-posx = 3091
-character-posy = 3538
+character-posx = 3088
+character-posy = 3486
 character-rights = 2
 crystal-bow-shots = 0
-skull-timer = 1711
+skull-timer = -1
 magic-book = 0
 brother-info = 0	0
 brother-info = 1	0
@@ -23,7 +23,7 @@ teleblock-length = 0
 pc-points = 1
 slayerTask = 0
 taskAmount = 0
-magePoints = 70
+magePoints = 80
 autoRet = 0
 barrowskillcount = 0
 flagged = false
@@ -40,7 +40,7 @@ quest1-part = 0
 character-equip = 0	-1	1	
 character-equip = 1	-1	1	
 character-equip = 2	-1	1	
-character-equip = 3	1321	1	
+character-equip = 3	-1	0	
 character-equip = 4	-1	1	
 character-equip = 5	-1	1	
 character-equip = 6	-1	0	
@@ -50,7 +50,7 @@ character-equip = 9	-1	1
 character-equip = 10	-1	1	
 character-equip = 11	-1	0	
 character-equip = 12	-1	1	
-character-equip = 13	882	2000	
+character-equip = 13	-1	3994	
 
 [LOOK]
 character-look = 0	0
@@ -68,10 +68,10 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	29	12127
+character-skill = 0	30	13839
 character-skill = 1	1	0
 character-skill = 2	50	101338
-character-skill = 3	40	38651
+character-skill = 3	40	39220
 character-skill = 4	1	5
 character-skill = 5	1	0
 character-skill = 6	1	5
@@ -95,32 +95,6 @@ character-skill = 23	1	0
 character-skill = 24	1	0
 
 [ITEMS]
-character-item = 0	996	9999990
-character-item = 1	1080	1
-character-item = 2	1374	1
-character-item = 3	1128	1
-character-item = 4	1164	1
-character-item = 5	1334	1
-character-item = 6	4132	1
-character-item = 7	842	1
-character-item = 8	883	1995
-character-item = 9	1308	1
-character-item = 10	1308	1
-character-item = 11	534	200
-character-item = 12	557	200
-character-item = 13	555	200
-character-item = 14	556	200
-character-item = 15	558	200
-character-item = 16	387	200
-character-item = 17	2442	10
-character-item = 18	2444	10
-character-item = 19	2446	10
-character-item = 20	2448	10
-character-item = 21	3026	10
-character-item = 22	6687	10
-character-item = 23	2438	10
-character-item = 24	842	1
-character-item = 25	527	1
 
 [BANK]
 

@@ -632,12 +632,12 @@ public class CombatAssistant{
 			if(!c.getCombat().checkReqs()) {
 				return;
 			}
-			
-			if (c.getPA().getWearingAmount() < 2 && c.duelStatus < 1) {
-				c.sendMessage("@red@You must be wearing at least 2 items to attack someone.");
-				resetPlayerAttack();
-				return;
-			}
+		//currently removed the 2 item minimum for wilderness 
+		//	if (c.getPA().getWearingAmount() < 2 && c.duelStatus < 1) {
+		//		c.sendMessage("@red@You must be wearing at least 2 items to attack someone.");
+		//		resetPlayerAttack();
+		//		return;
+		//	}
 			boolean sameSpot = c.absX == Server.playerHandler.players[i].getX() && c.absY == Server.playerHandler.players[i].getY();
 			if(!c.goodDistance(Server.playerHandler.players[i].getX(), Server.playerHandler.players[i].getY(), c.getX(), c.getY(), 25) && !sameSpot) {
 				resetPlayerAttack();
