@@ -121,6 +121,11 @@ public class PlayerHandler{
 							}
 						}
 						Client o = (Client) Server.playerHandler.players[i];
+						//must remove player from lms and items before log out 
+						if(o.inLMS()) {
+							o.getLMS().handleLogOut();
+						}
+						
 						if(PlayerSave.saveGame(o)) { 
 							System.out.println("Game saved for player "+players[i].playerName); 
 						} else { 

@@ -4,8 +4,8 @@ character-password = 116101115116
 
 [CHARACTER]
 character-height = 0
-character-posx = 2835
-character-posy = 3336
+character-posx = 3088
+character-posy = 3494
 character-rights = 3
 crystal-bow-shots = 0
 skull-timer = -1
@@ -20,7 +20,7 @@ special-amount = 10.0
 selected-coffin = 0
 barrows-killcount = 0
 teleblock-length = 0
-pc-points = 1
+pc-points = 4
 slayerTask = 0
 taskAmount = 0
 magePoints = 160
@@ -106,6 +106,10 @@ character-bank = 5	4132	1
 character-bank = 6	1334	1
 character-bank = 7	1322	1
 character-bank = 8	386	200
+character-bank = 9	4092	7
+character-bank = 10	4094	3
+character-bank = 11	4096	3
+character-bank = 12	3106	3
 
 [FRIENDS]
 

@@ -833,7 +833,8 @@ public class PlayerAssistant{
 				//add a boolean to client for is in lms 
 				//if in lms launch the lms cleanup game function 
 				if(o.inLMS) {
-					Misc.println("player died in lms");
+					c.getLMS().removePlayer();
+					c.getLMS().removeItems();
 				}
 			}
 		}

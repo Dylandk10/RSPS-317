@@ -4,11 +4,11 @@ character-password = 116101115116
 
 [CHARACTER]
 character-height = 0
-character-posx = 2834
-character-posy = 3335
+character-posx = 3088
+character-posy = 3498
 character-rights = 2
 crystal-bow-shots = 0
-skull-timer = 904
+skull-timer = -1
 magic-book = 0
 brother-info = 0	0
 brother-info = 1	0
@@ -97,6 +97,8 @@ character-skill = 24	1	0
 [ITEMS]
 
 [BANK]
+character-bank = 0	4092	2
+character-bank = 1	4094	1
 
 [FRIENDS]
 

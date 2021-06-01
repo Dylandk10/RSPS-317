@@ -150,9 +150,9 @@ public class Client extends Player {
 	};
 
 	public void destruct() {
-                           Client o = (Client) Server.playerHandler.players[duelingWith];
-                        if(inDuelArena() && o.disconnected == true) {
-                                 getTradeAndDuel().duelVictory();
+        Client o = (Client) Server.playerHandler.players[duelingWith];
+        if(inDuelArena() && o.disconnected == true) {
+            getTradeAndDuel().duelVictory();
                         }
 		if(session == null) 
 			return;

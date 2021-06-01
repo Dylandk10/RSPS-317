@@ -1526,6 +1526,14 @@ public abstract class Player {
 		return absY;
 	}
 	
+	public void setabsX(int x) {
+		absX = x;
+	}
+	
+	public void setabsY(int y) {
+		absY = y;
+	}
+	
 	public int getId() {
 		return playerId;
 	}

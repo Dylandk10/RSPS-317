@@ -47,6 +47,13 @@ public class LastManStanding {
 		return c.getItems().playerHasEmptyInv();
 	}
 	
+	public void handleLogOut() {
+		//removePlayer();
+		removeItems();
+		c.setabsX(3088);
+		c.setabsY(3497);
+	}
+	
 	
 	//make sure the player is bring no equipment into the game 
 	public boolean checkIfPlayerIsWearingItems() {
@@ -59,14 +66,21 @@ public class LastManStanding {
 	
 	//give the starting gear to a player entering the areana 
 	public void startingGear() {
-		//c.getItems.addItem(4091, 1);
-		//c.getItems.addItem(4093, 1);
-		//c.getItems.addItem(4095, 1);
-		//c.getItems.addItem(3105, 1);
+		//add items to inventory
+		c.getItems().addItem(4091, 1);
+		c.getItems().addItem(4093, 1);
+		c.getItems().addItem(4095, 1);
+		c.getItems().addItem(3105, 1);
 		
-		//to set equipment 
-		//getItems().setEquipment(playerEquipment[playerRing],1,playerRing);
+		//to set equipment 1 = neckless slot, 
+		c.getItems().setEquipment(4091, 1, 2);
 	}
+	
+	//remove all the items !!!! did not work !!!!!
+	public void removeItems() {
+		c.getItems().deleteAllItems();
+	}
+	
 	
 	//boost the players stats to 99 
 	public void boostStats() {
