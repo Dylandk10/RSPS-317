@@ -203,7 +203,9 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		clickX = i;
 		clickY = j;
 		clickTime = System.currentTimeMillis();
-		if(mouseevent.isMetaDown())
+		//if(mouseevent.isMetaDown())
+			int modifiers = mouseevent.getModifiers();
+			if((modifiers & InputEvent.BUTTON3_MASK) == InputEvent.BUTTON3_MASK)
 		{
 			clickMode1 = 2;
 			clickMode2 = 2;

@@ -8,7 +8,6 @@ The server is also built on a file system instead of a DB so it would be best to
 ## Bugs
 Right now this server becomes unstable when to many people log on. This is a result from the poor server threads in Server.java\
 The graphics are quite delayed also, This may be another server threading problem though the client may also just be lagged.\
-Right clicking is buggy and most of the time doesn't work.
 
 ## What I am currently working on
 Last Man Standing Minigame\
@@ -21,7 +20,8 @@ in game trading\
 skull timer and enabling skull for PVP.\
 Fixed thieving and fishing skills\
 Fixed PVP combat thread to autocast and "Stack" damage\
-Better log out System
+Better log out System\
+right clicking options and drop downs
 
 ### What I Added
 Last Man Standing Minigame\
@@ -29,4 +29,5 @@ Last Man Stadning log out system\
 remove items for lms minigame\
 Added temp file system to hold data for players in last man standing\
 Added last man standing area\
+right clicking\
 Added stat booting for lms and revert stats for lms
