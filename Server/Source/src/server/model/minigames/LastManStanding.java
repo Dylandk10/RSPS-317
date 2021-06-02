@@ -30,10 +30,12 @@ public class LastManStanding {
 	//add play inits the play for the game 
 	public void addPlayer() {
 		playerList.add(c.playerId);
-		//lmsH.savePlayerStats();
+		lmsH.savePlayerStats();
 		boostStats();
-		//revertStats();
 		c.inLMS = true;
+		c.specAmount = 10;
+		c.playerMagicBook = 1;
+		c.setSidebarInterface(6, 12855);
 		startingGear();
 	}
 	
@@ -48,8 +50,9 @@ public class LastManStanding {
 	}
 	
 	public void handleLogOut() {
-		//removePlayer();
+		removePlayer();
 		removeItems();
+		revertStats();
 		c.setabsX(3088);
 		c.setabsY(3497);
 	}
@@ -67,13 +70,31 @@ public class LastManStanding {
 	//give the starting gear to a player entering the areana 
 	public void startingGear() {
 		//add items to inventory
-		c.getItems().addItem(4091, 1);
-		c.getItems().addItem(4093, 1);
-		c.getItems().addItem(4095, 1);
-		c.getItems().addItem(3105, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(1215, 1);
+		c.getItems().addItem(2503, 1);
+		c.getItems().addItem(2617, 1);
 		
-		//to set equipment 1 = neckless slot, 
-		c.getItems().setEquipment(4091, 1, 2);
+		//to set equipment: 0 = head. 1 = cape 2 = neckless slot, 3= weapon, 4 = body, 5 = shield, 6 = null, 
+		//7 = legs, 8 = ring, 9 = gloves, 10 = boots, 11 = null, 12 = ring, 13 = arrows
+		c.getItems().setEquipment(10828, 1, 0);
+		c.getItems().setEquipment(13734, 1, 5);
+		c.getItems().setEquipment(1704, 1, 2);
+		c.getItems().setEquipment(4710, 1, 3);
+		c.getItems().setEquipment(4091, 1, 4);
+		c.getItems().setEquipment(4093, 1, 7);
+		c.getItems().setEquipment(7462, 1, 9);
+		c.getItems().setEquipment(3105, 1, 10);
+		c.getItems().setEquipment(2414, 1, 1);
+		c.getItems().setEquipment(6737, 1, 12);
+		c.getItems().setEquipment(9244, 5000, 13);
+		c.getItems().getBonus();
+		c.getItems().resetBonus();
+		c.getItems().getBonus();
+		c.getItems().writeBonus();
+		c.getCombat().getPlayerAnimIndex(c.getItems().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
+		c.getPA().requestUpdates();
 	}
 	
 	//remove all the items !!!! did not work !!!!!

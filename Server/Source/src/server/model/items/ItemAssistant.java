@@ -882,7 +882,7 @@ public class ItemAssistant {
 	*two handed weapon check
 	**/
 	public boolean is2handed(String itemName, int itemId) {
-		if(itemName.contains("ahrim") || itemName.contains("karil") || itemName.contains("verac") || itemName.contains("guthan") || itemName.contains("dharok") || itemName.contains("torag")) {
+		if(itemName.contains("karil") || itemName.contains("verac") || itemName.contains("guthan") || itemName.contains("dharok") || itemName.contains("torag")) {
 			return true;
 		}
 		if(itemName.contains("longbow") || itemName.contains("shortbow") || itemName.contains("ark bow")) {

@@ -29,7 +29,6 @@ public class LastManStandingHandler {
 	
 	public LastManStandingHandler(Client c) {
 		this.c = c;
-		Misc.println("LastManStandingHandler Running...");
 	}
 	
 	
