@@ -5,11 +5,11 @@ character-password = 116101115116
 [CHARACTER]
 character-height = 0
 character-posx = 3088
-character-posy = 3498
+character-posy = 3497
 character-rights = 2
 crystal-bow-shots = 0
 skull-timer = -1
-magic-book = 0
+magic-book = 1
 brother-info = 0	0
 brother-info = 1	0
 brother-info = 2	0
@@ -37,20 +37,20 @@ memberStatus = 1
 quest1-part = 0
 
 [EQUIPMENT]
-character-equip = 0	-1	1	
-character-equip = 1	-1	1	
-character-equip = 2	-1	1	
+character-equip = 0	-1	0	
+character-equip = 1	-1	0	
+character-equip = 2	-1	0	
 character-equip = 3	-1	0	
-character-equip = 4	-1	1	
-character-equip = 5	-1	1	
+character-equip = 4	-1	0	
+character-equip = 5	-1	0	
 character-equip = 6	-1	0	
-character-equip = 7	-1	1	
+character-equip = 7	-1	0	
 character-equip = 8	-1	0	
-character-equip = 9	-1	1	
-character-equip = 10	-1	1	
+character-equip = 9	-1	0	
+character-equip = 10	-1	0	
 character-equip = 11	-1	0	
-character-equip = 12	-1	1	
-character-equip = 13	-1	3994	
+character-equip = 12	-1	0	
+character-equip = 13	-1	4999	
 
 [LOOK]
 character-look = 0	0

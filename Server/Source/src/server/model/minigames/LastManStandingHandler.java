@@ -118,7 +118,7 @@ public class LastManStandingHandler {
 		if(list.size() < 12) {
 			this.updatePlayersWaiting(list);
 		} else {
-			
+			//logic to start game push players to playerList remove platers from playerListHold and give them all a tele x,y cords
 		}
 	}
 	
@@ -128,8 +128,8 @@ public class LastManStandingHandler {
 			Client client = (Client) list.get(i);
 			int length = list.size();
 			int playersRemaining = 12 - length;
-			client.sendMessage("@gre@" + length + "/12 players ready");
-			client.sendMessage("@gre@Still need " + playersRemaining + " players");
+			client.sendMessage("@blu@" + length + "/12 players ready");
+			client.sendMessage("@blu@Still need " + playersRemaining + " players");
 		}
 	}
 	

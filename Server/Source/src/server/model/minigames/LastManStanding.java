@@ -19,8 +19,8 @@ import server.util.Misc;
 
 public class LastManStanding {
 	///list to hold players 
-	public ArrayList<Player> playerList = new ArrayList<Player>();
-	public ArrayList<Player> holdLMSList = new ArrayList<Player>();
+	public static ArrayList<Player> playerList = new ArrayList<Player>();
+	public static ArrayList<Player> holdLMSList = new ArrayList<Player>();
 	private LastManStandingHandler lmsH;
 	private Client c;
 	private Player player;
@@ -42,6 +42,8 @@ public class LastManStanding {
 		c.setSidebarInterface(6, 12855);
 		startingGear();
 		this.lmsH.init(holdLMSList);
+		int listsize = holdLMSList.size();
+		Misc.println("List size " + listsize);
 	}
 	
 	//remove player means they are no longer in the game 
