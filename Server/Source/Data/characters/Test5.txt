@@ -5,7 +5,7 @@ character-password = 116101115116
 [CHARACTER]
 character-height = 0
 character-posx = 3088
-character-posy = 3497
+character-posy = 3494
 character-rights = 3
 crystal-bow-shots = 0
 skull-timer = -1
@@ -37,19 +37,19 @@ memberStatus = 1
 quest1-part = 0
 
 [EQUIPMENT]
-character-equip = 0	-1	0	
-character-equip = 1	-1	0	
-character-equip = 2	-1	0	
+character-equip = 0	-1	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
 character-equip = 3	-1	0	
-character-equip = 4	-1	0	
-character-equip = 5	-1	0	
+character-equip = 4	-1	1	
+character-equip = 5	-1	1	
 character-equip = 6	-1	0	
-character-equip = 7	-1	0	
+character-equip = 7	-1	1	
 character-equip = 8	-1	0	
-character-equip = 9	-1	0	
-character-equip = 10	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
 character-equip = 11	-1	0	
-character-equip = 12	-1	0	
+character-equip = 12	-1	1	
 character-equip = 13	-1	4999	
 
 [LOOK]
@@ -68,10 +68,10 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	99	13037646
+character-skill = 0	99	13034436
 character-skill = 1	99	13034436
 character-skill = 2	99	13034436
-character-skill = 3	99	13035504
+character-skill = 3	99	13034436
 character-skill = 4	99	13034436
 character-skill = 5	99	13034436
 character-skill = 6	99	13034436
@@ -85,7 +85,7 @@ character-skill = 13	99	13034436
 character-skill = 14	99	13034436
 character-skill = 15	99	13034436
 character-skill = 16	99	13034436
-character-skill = 17	99	13037686
+character-skill = 17	99	13034436
 character-skill = 18	99	13034436
 character-skill = 19	99	13034436
 character-skill = 20	99	13034436
@@ -105,12 +105,31 @@ character-bank = 4	1164	1
 character-bank = 5	4132	1
 character-bank = 6	1334	1
 character-bank = 7	1322	1
-character-bank = 8	386	200
-character-bank = 9	4092	7
-character-bank = 10	4094	3
+character-bank = 8	386	230
+character-bank = 9	4092	9
+character-bank = 10	4094	5
 character-bank = 11	4096	3
-character-bank = 12	3106	3
+character-bank = 12	3106	5
 character-bank = 13	14485	1
+character-bank = 14	9740	2
+character-bank = 15	140	2
+character-bank = 16	6686	2
+character-bank = 17	3025	2
+character-bank = 18	561	20000
+character-bank = 19	566	20000
+character-bank = 20	556	20000
+character-bank = 21	9186	2
+character-bank = 22	1216	2
+character-bank = 23	2504	2
+character-bank = 24	2618	2
+character-bank = 25	7463	2
+character-bank = 26	4711	2
+character-bank = 27	9245	10000
+character-bank = 28	13735	2
+character-bank = 29	2415	2
+character-bank = 30	6738	2
+character-bank = 31	1705	2
+character-bank = 32	10829	2
 
 [FRIENDS]
 

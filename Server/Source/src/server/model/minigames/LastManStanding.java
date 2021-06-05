@@ -33,7 +33,7 @@ public class LastManStanding {
 	
 	//add play inits the play for the game 
 	public void addPlayer() {
-		playerList.add(player);
+		holdLMSList.add(player);
 		lmsH.savePlayerStats();
 		boostStats();
 		c.inLMS = true;
@@ -41,11 +41,18 @@ public class LastManStanding {
 		c.playerMagicBook = 1;
 		c.setSidebarInterface(6, 12855);
 		startingGear();
+		this.lmsH.init(holdLMSList);
 	}
 	
 	//remove player means they are no longer in the game 
 	public void removePlayer() {
 		playerList.remove(playerList.indexOf(player));
+		c.inLMS = false;
+	}
+	
+	//remove player from hold list 
+	public void removePlayerHold() {
+		holdLMSList.remove(holdLMSList.indexOf(player));
 	}
 	
 	//make sure the players inventory is empty before joining the game 
@@ -54,9 +61,14 @@ public class LastManStanding {
 	}
 	
 	public void handleLogOut() {
-		removePlayer();
+		if(c.inLMSWaiting()) {
+			removePlayerHold();
+		} else {
+			removePlayer();
+		}
 		removeItems();
 		revertStats();
+		c.inLMS = false;
 		c.setabsX(3088);
 		c.setabsY(3497);
 	}

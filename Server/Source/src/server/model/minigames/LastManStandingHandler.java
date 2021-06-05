@@ -18,10 +18,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-
+import java.util.ArrayList;
 import server.Server;
 import server.util.Misc;
 import server.model.players.Client;
+import server.model.players.Player;
 
 public class LastManStandingHandler {
 	boolean saved = false;
@@ -110,6 +111,26 @@ public class LastManStandingHandler {
 			Misc.println("Character file is not found");
 		}
 		try { characterfile.close(); } catch(IOException ioexception) { Misc.println("Error closing character file."); }
+	}
+	
+	//init the match when ready 
+	public void init(ArrayList<Player> list) {
+		if(list.size() < 12) {
+			this.updatePlayersWaiting(list);
+		} else {
+			
+		}
+	}
+	
+	//update all the players waiting
+	public void updatePlayersWaiting(ArrayList<Player> list) {
+		for(int i = 0; i < list.size(); i++) {
+			Client client = (Client) list.get(i);
+			int length = list.size();
+			int playersRemaining = 12 - length;
+			client.sendMessage("@gre@" + length + "/12 players ready");
+			client.sendMessage("@gre@Still need " + playersRemaining + " players");
+		}
 	}
 	
 }

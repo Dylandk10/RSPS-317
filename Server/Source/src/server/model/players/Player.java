@@ -427,7 +427,16 @@ public abstract class Player {
 	
 	//the area for the lms mini game K3LLY
 	public boolean inLMS() {
-		if(absY > 3330 && absY < 3399 && absX > 2800 && absX < 2875) {
+		if(absY > 3331 && absY < 3399 && absX > 2800 && absX < 2875) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//waiting area for lms 
+	public boolean inLMSWaiting() {
+		if(absY <= 3331 && absY >= 3329 && absX >= 2824 && absX <= 2840) {
 			return true;
 		} else {
 			return false;

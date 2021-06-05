@@ -1074,7 +1074,7 @@ public void castVeng() {
 			return;
 		}
 		//cannnot teleport out of lms K3LLY added ignore case so i can tele in and out to code the game
-		if(c.inLMS() && !c.playerName.equalsIgnoreCase("test5")) {
+		if((c.inLMS() || c.inLMSWaiting()) && !c.playerName.equalsIgnoreCase("test5")) {
 			c.sendMessage("You cannot teleport out of LMS, your here to fight!");
 			return;
 		}

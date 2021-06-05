@@ -55,7 +55,7 @@ public class ClickObject implements PacketType {
 				case 2156:
 					Misc.println("ClickingObects.java lms portal clicked");
 					if(c.getLMS().checkPlayerInvenory() && !c.getLMS().checkIfPlayerIsWearingItems()) {	
-						c.getPA().movePlayer(2834, 3335, 0);
+						c.getPA().movePlayer(2834, 3330, 0);
 						c.getLMS().addPlayer();
 					} else {
 						c.sendMessage("You can not take anything into Last Man Standing");

@@ -122,7 +122,7 @@ public class PlayerHandler{
 						}
 						Client o = (Client) Server.playerHandler.players[i];
 						//must remove player from lms and items before log out 
-						if(o.inLMS()) {
+						if(o.inLMS() || o.inLMSWaiting()) {
 							o.getLMS().handleLogOut();
 						}
 						
