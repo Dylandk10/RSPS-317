@@ -686,8 +686,11 @@ break;
 			case 4171:
 			case 117048:
 			case 50056:
+			//this has to stay outside the if bc it needs totrigge the function to send other messages 
 			c.getPA().startTeleport(3088, 3497, 0, "modern");
-			c.sendMessage("@dbl@You have teleported home");
+			if(!c.inLMS() && !c.inLMSWaiting()) {
+				c.sendMessage("@dbl@You have teleported home");
+			}
 			break;
 			
 			case 50235:

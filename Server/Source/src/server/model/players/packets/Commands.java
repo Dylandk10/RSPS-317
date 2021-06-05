@@ -546,7 +546,7 @@ public class Commands implements PacketType {
 					
 			if(playerCommand.equalsIgnoreCase("home") && c.playerRights >= 0) {             
 				c.getPA().movePlayer(3213,3425,0);
-				c.sendMessage("@dbl@You have teleported home");
+				//c.sendMessage("@dbl@You have teleported home");
 				}
 			
 			if(playerCommand.equalsIgnoreCase("party") && c.playerRights >= 0) {             

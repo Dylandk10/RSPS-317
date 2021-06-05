@@ -140,7 +140,7 @@ public class ActionHandler {
 		break;
 				
 		case 1817:
-			if(!c.inLMS()) {
+			if(!c.inLMS() && !c.inLMSWaiting()) {
 				c.getPA().startTeleport(3213, 3425, 0, "modern");
 				c.sendMessage("@dbl@You have teleported home");
 			}
