@@ -14,22 +14,26 @@ import java.util.ArrayList;
 
 import server.Server;
 import server.model.players.Client;
+import server.model.players.Player;
 import server.util.Misc;
 
 public class LastManStanding {
 	///list to hold players 
-	public ArrayList<Integer> playerList = new ArrayList<Integer>();
+	public ArrayList<Player> playerList = new ArrayList<Player>();
+	public ArrayList<Player> holdLMSList = new ArrayList<Player>();
 	private LastManStandingHandler lmsH;
 	private Client c;
+	private Player player;
 	
 	public LastManStanding(Client c) {
 		this.c = c;
 		this.lmsH = new LastManStandingHandler(this.c);
+		this.player = (Player) c;
 	}
 	
 	//add play inits the play for the game 
 	public void addPlayer() {
-		playerList.add(c.playerId);
+		playerList.add(player);
 		lmsH.savePlayerStats();
 		boostStats();
 		c.inLMS = true;
@@ -41,7 +45,7 @@ public class LastManStanding {
 	
 	//remove player means they are no longer in the game 
 	public void removePlayer() {
-		playerList.remove(playerList.indexOf(c.playerId));
+		playerList.remove(playerList.indexOf(player));
 	}
 	
 	//make sure the players inventory is empty before joining the game 
@@ -72,9 +76,33 @@ public class LastManStanding {
 		//add items to inventory
 		c.getItems().addItem(385, 1);
 		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(9739, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(139, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(3024, 1);
 		c.getItems().addItem(1215, 1);
 		c.getItems().addItem(2503, 1);
 		c.getItems().addItem(2617, 1);
+		c.getItems().addItem(6685, 1);
+		c.getItems().addItem(9185, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(385, 1);
+		c.getItems().addItem(560, 10000);
+		c.getItems().addItem(555, 10000);
+		c.getItems().addItem(565, 10000);
+		
+		
+		
 		
 		//to set equipment: 0 = head. 1 = cape 2 = neckless slot, 3= weapon, 4 = body, 5 = shield, 6 = null, 
 		//7 = legs, 8 = ring, 9 = gloves, 10 = boots, 11 = null, 12 = ring, 13 = arrows

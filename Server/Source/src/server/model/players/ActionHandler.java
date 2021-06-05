@@ -140,8 +140,10 @@ public class ActionHandler {
 		break;
 				
 		case 1817:
-			c.getPA().startTeleport(3213, 3425, 0, "modern");
-			c.sendMessage("@dbl@You have teleported home");
+			if(!c.inLMS()) {
+				c.getPA().startTeleport(3213, 3425, 0, "modern");
+				c.sendMessage("@dbl@You have teleported home");
+			}
 		break;
 		case 9356:
 			c.getPA().movePlayer(2413, 5117, 0);
