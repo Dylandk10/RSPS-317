@@ -116,19 +116,19 @@ public class LastManStandingHandler {
 	//init the match when ready 
 	public void init(ArrayList<Player> list) {
 		if(list.size() < 12) {
-			this.updatePlayersWaiting(list);
+			this.updatePlayersWaiting(list, "Added");
 		} else {
 			//logic to start game push players to playerList remove platers from playerListHold and give them all a tele x,y cords
 		}
 	}
 	
 	//update all the players waiting
-	public void updatePlayersWaiting(ArrayList<Player> list) {
+	public void updatePlayersWaiting(ArrayList<Player> list, String str) {
 		for(int i = 0; i < list.size(); i++) {
 			Client client = (Client) list.get(i);
 			int length = list.size();
 			int playersRemaining = 12 - length;
-			client.sendMessage("@blu@" + length + "/12 players ready");
+			client.sendMessage("@blu@Player " + str + length + "/12 players ready");
 			client.sendMessage("@blu@Still need " + playersRemaining + " players");
 		}
 	}

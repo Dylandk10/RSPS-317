@@ -42,8 +42,6 @@ public class LastManStanding {
 		c.setSidebarInterface(6, 12855);
 		startingGear();
 		this.lmsH.init(holdLMSList);
-		int listsize = holdLMSList.size();
-		Misc.println("List size " + listsize);
 	}
 	
 	//remove player means they are no longer in the game 
@@ -65,6 +63,7 @@ public class LastManStanding {
 	public void handleLogOut() {
 		if(c.inLMSWaiting()) {
 			removePlayerHold();
+			this.lmsH.updatePlayersWaiting(this.holdLMSList, "Left");
 		} else {
 			removePlayer();
 		}
