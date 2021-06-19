@@ -18,9 +18,10 @@ import server.model.players.Player;
 import server.util.Misc;
 
 public class LastManStanding {
-	///list to hold players 
-	public static ArrayList<Player> playerList = new ArrayList<Player>();
-	public static ArrayList<Player> holdLMSList = new ArrayList<Player>();
+	//in game player list 
+	private static ArrayList<Player> playerList = new ArrayList<Player>();
+	//waiting area list 
+	private static ArrayList<Player> holdLMSList = new ArrayList<Player>();
 	private LastManStandingHandler lmsH;
 	private Client c;
 	private Player player;
@@ -41,7 +42,7 @@ public class LastManStanding {
 		c.playerMagicBook = 1;
 		c.setSidebarInterface(6, 12855);
 		startingGear();
-		this.lmsH.init(holdLMSList);
+		this.lmsH.init(holdLMSList, playerList);
 	}
 	
 	//remove player means they are no longer in the game 
@@ -219,5 +220,9 @@ public class LastManStanding {
 	//revert the players stats to what they were before the game 
 	public void revertStats() {
 		lmsH.getStatsFromFile();
+	}
+	
+	public ArrayList<Player> getGameList() {
+		return this.playerList;
 	}
 }

@@ -25,8 +25,12 @@ import server.model.players.Client;
 import server.model.players.Player;
 
 public class LastManStandingHandler {
+	final public int MAX_GAME_SIZE = 12;
 	boolean saved = false;
 	private Client c;
+	
+	private int[][] spawnPoints = {{2816, 3347},{2822, 3349}, {2816, 3333}, {2822, 3337}, {2848, 3337}, {2854, 3335}, {2866, 3383}, 
+									{2861, 3384}, {2847, 3387}, {2839, 3392}, {2808, 3378}, {2809, 3372}};
 	
 	public LastManStandingHandler(Client c) {
 		this.c = c;
@@ -113,12 +117,16 @@ public class LastManStandingHandler {
 		try { characterfile.close(); } catch(IOException ioexception) { Misc.println("Error closing character file."); }
 	}
 	
-	//init the match when ready 
-	public void init(ArrayList<Player> list) {
+	//init the match when ready main controller for handling the start of the game 
+	public void init(ArrayList<Player> list, ArrayList<Player> gameList) {
 		if(list.size() < 12) {
 			this.updatePlayersWaiting(list, "Added");
 		} else {
 			//logic to start game push players to playerList remove platers from playerListHold and give them all a tele x,y cords
+			this.addPlayersToGameList(list, gameList);
+			this.setSpawnLocation(gameList);
+			//update the left over players 
+			this.updatePlayersWaiting(list, "Removed");
 		}
 	}
 	
@@ -133,4 +141,35 @@ public class LastManStandingHandler {
 		}
 	}
 	
+	
+	//remove players from waiting lsit and add them to the game list 
+	private void addPlayersToGameList(ArrayList<Player> list, ArrayList<Player> gameList) {
+		
+		//add players to game list 
+		for(int i = 0; i < MAX_GAME_SIZE; i++) {
+			Player p = list.get(i);
+			gameList.add(p);
+		}
+		
+		//remove players from hold list
+		for(int i = 0; i < MAX_GAME_SIZE; i++) {
+			int index = list.indexOf(list.get(i));
+			list.remove(index);
+		}
+		
+	}
+	
+	
+	//spawn the players to their starting locations 
+	private void setSpawnLocation(ArrayList<Player> gameList) {
+		for(int i = 0; i < gameList.size(); i++) {
+			Client c = (Client) gameList.get(i);
+			c.getPA().movePlayer(spawnPoints[i][0], spawnPoints[i][1], 0);
+		}
+	}
+	
 }
+
+
+
+
