@@ -226,6 +226,22 @@ public class LastManStanding {
 		lmsH.getStatsFromFile();
 	}
 	
+	//test to make sure they get something will make array with all items for chest later 
+	public void getItemFromChest() {
+		c.getItems().addItem(14484, 1);
+		c.getItems().deleteItem(601, 1);
+	}
+	
+	public void checkWin() {
+		Misc.println("" + playerList.size());
+		if(this.playerList.size() == 1) {
+			c.forcedText = "I HAVE WON LMS!! I CAN'T BE STOPPED!";
+			c.forcedChatUpdateRequired = true;
+			c.updateRequired = true;
+			
+		}
+	}
+	
 	public ArrayList<Player> getGameList() {
 		return this.playerList;
 	}

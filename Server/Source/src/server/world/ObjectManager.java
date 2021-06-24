@@ -189,6 +189,9 @@ public class ObjectManager {
 		
 		//portal to last man stadning 
 		c.getPA().checkObjectSpawn(2156, 3091, 3487, 1, 10);
+		
+		//chest for last man standing
+		c.getPA().checkObjectSpawn(75, 2824, 3345, 2, 10);
 	}
 	
 	public final int IN_USE_ID = 14825;

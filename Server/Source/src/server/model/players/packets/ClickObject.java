@@ -51,6 +51,13 @@ public class ClickObject implements PacketType {
 					c.objectDistance = 0;
 				break;
 				
+				//lms check 
+				case 75:
+					if(c.getItems().playerHasItem(601)) {
+						c.getLMS().getItemFromChest();
+					}
+					break;
+				
 				//lms portal to tele player to lms field K3LLY
 				case 2156:
 					if(c.getLMS().checkPlayerInvenory() && !c.getLMS().checkIfPlayerIsWearingItems()) {	
