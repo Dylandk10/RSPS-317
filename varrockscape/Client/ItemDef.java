@@ -252,6 +252,11 @@ public final class ItemDef {
 			itemDef.femaleEquip1 = 42644;
 			itemDef.description = "Vesta's chainbody.".getBytes();
 			break;
+			
+		case 601:
+			itemDef.name = "Bloody Key";
+			itemDef.description = "A Key to Unlock the check in LMS".getBytes();
+			break;
 
 		/**
 		 * Primal kite.

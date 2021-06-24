@@ -1,14 +1,14 @@
 [ACCOUNT]
-character-username = Test5
-character-password = 116101115116
+character-username = T2
+character-password = 116
 
 [CHARACTER]
 character-height = 0
 character-posx = 3088
 character-posy = 3497
-character-rights = 3
+character-rights = 0
 crystal-bow-shots = 0
-skull-timer = 1697
+skull-timer = 1701
 magic-book = 1
 brother-info = 0	0
 brother-info = 1	0
@@ -16,14 +16,14 @@ brother-info = 2	0
 brother-info = 3	0
 brother-info = 4	0
 brother-info = 5	0
-special-amount = 3.5
+special-amount = 10.0
 selected-coffin = 0
 barrows-killcount = 0
 teleblock-length = 0
-pc-points = 8
+pc-points = 1
 slayerTask = 0
 taskAmount = 0
-magePoints = 160
+magePoints = 0
 autoRet = 0
 barrowskillcount = 0
 flagged = false
@@ -68,10 +68,10 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	99	13034436
+character-skill = 0	99	13044708
 character-skill = 1	99	13034436
 character-skill = 2	99	13034436
-character-skill = 3	99	13034436
+character-skill = 3	99	13037857
 character-skill = 4	99	13034436
 character-skill = 5	99	13034436
 character-skill = 6	99	13034436
@@ -97,39 +97,6 @@ character-skill = 24	1	0
 [ITEMS]
 
 [BANK]
-character-bank = 0	996	81010
-character-bank = 1	1080	2
-character-bank = 2	1374	2
-character-bank = 3	1128	2
-character-bank = 4	1164	1
-character-bank = 5	4132	1
-character-bank = 6	1334	1
-character-bank = 7	1322	1
-character-bank = 8	386	245
-character-bank = 9	4092	10
-character-bank = 10	4094	6
-character-bank = 11	4096	3
-character-bank = 12	3106	6
-character-bank = 13	14485	1
-character-bank = 14	9740	3
-character-bank = 15	140	3
-character-bank = 16	6686	3
-character-bank = 17	3025	3
-character-bank = 18	561	30000
-character-bank = 19	566	30000
-character-bank = 20	556	30000
-character-bank = 21	9186	3
-character-bank = 22	1216	3
-character-bank = 23	2504	3
-character-bank = 24	2618	3
-character-bank = 25	7463	3
-character-bank = 26	4711	3
-character-bank = 27	9245	15000
-character-bank = 28	13735	3
-character-bank = 29	2415	3
-character-bank = 30	6738	3
-character-bank = 31	1705	3
-character-bank = 32	10829	3
 
 [FRIENDS]
 

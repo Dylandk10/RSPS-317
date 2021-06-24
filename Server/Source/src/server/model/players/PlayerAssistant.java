@@ -834,7 +834,9 @@ public class PlayerAssistant{
 				//if in lms launch the lms cleanup game function 
 				if(o.inLMS) {
 					c.getLMS().removePlayer();
+					c.getItems().dropAllItems();
 					c.getLMS().removeItems();
+					o.getLMS().giveKey();
 				}
 			}
 		}

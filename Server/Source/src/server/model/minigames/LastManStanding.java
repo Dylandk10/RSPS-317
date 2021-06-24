@@ -139,7 +139,7 @@ public class LastManStanding {
 		c.getPA().requestUpdates();
 	}
 	
-	//remove all the items !!!! did not work !!!!!
+	//remove all the items 
 	public void removeItems() {
 		c.getItems().deleteAllItems();
 	}
@@ -215,6 +215,10 @@ public class LastManStanding {
 		c.getPA().refreshSkill(21);
 		c.updateRequired = true;
 		c.setAppearanceUpdateRequired(true);
+	}
+	
+	public void giveKey() {
+		c.getItems().addItem(601, 1);
 	}
 	
 	//revert the players stats to what they were before the game 

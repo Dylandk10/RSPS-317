@@ -19,13 +19,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.List;
 import server.Server;
 import server.util.Misc;
 import server.model.players.Client;
 import server.model.players.Player;
 
 public class LastManStandingHandler {
-	final public int MAX_GAME_SIZE = 12;
+	final public int MAX_GAME_SIZE = 4;
 	boolean saved = false;
 	private Client c;
 	
@@ -119,7 +120,7 @@ public class LastManStandingHandler {
 	
 	//init the match when ready main controller for handling the start of the game 
 	public void init(ArrayList<Player> list, ArrayList<Player> gameList) {
-		if(list.size() < 12) {
+		if(list.size() < MAX_GAME_SIZE) {
 			this.updatePlayersWaiting(list, "Added");
 		} else {
 			//logic to start game push players to playerList remove platers from playerListHold and give them all a tele x,y cords
@@ -151,11 +152,8 @@ public class LastManStandingHandler {
 			gameList.add(p);
 		}
 		
-		//remove players from hold list
-		for(int i = 0; i < MAX_GAME_SIZE; i++) {
-			int index = list.indexOf(list.get(i));
-			list.remove(index);
-		}
+		List<Player> subList = list.subList(0, MAX_GAME_SIZE);
+		subList.clear();
 		
 	}
 	
