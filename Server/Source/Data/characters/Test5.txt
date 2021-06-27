@@ -4,11 +4,11 @@ character-password = 116101115116
 
 [CHARACTER]
 character-height = 0
-character-posx = 3095
-character-posy = 3486
+character-posx = 3088
+character-posy = 3497
 character-rights = 3
 crystal-bow-shots = 0
-skull-timer = 1739
+skull-timer = 1602
 magic-book = 1
 brother-info = 0	0
 brother-info = 1	0
@@ -16,11 +16,11 @@ brother-info = 2	0
 brother-info = 3	0
 brother-info = 4	0
 brother-info = 5	0
-special-amount = 1.0
+special-amount = 10.0
 selected-coffin = 0
 barrows-killcount = 0
 teleblock-length = 0
-pc-points = 19
+pc-points = 26
 slayerTask = 0
 taskAmount = 0
 magePoints = 160
@@ -68,12 +68,12 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	99	13055622
+character-skill = 0	99	13055729
 character-skill = 1	99	13034436
 character-skill = 2	99	13034436
-character-skill = 3	99	13041493
+character-skill = 3	99	13041529
 character-skill = 4	99	13034436
-character-skill = 5	88	13034436
+character-skill = 5	64	13034436
 character-skill = 6	99	13034436
 character-skill = 7	99	13034436
 character-skill = 8	99	13034436

@@ -26,6 +26,10 @@ public class LastManStanding {
 	private Client c;
 	private Player player;
 	
+	//items in chest for players with key
+	private final int[] chestWeapons = {14484, 13899, 13902, 15001, 15038, 15037, 11694};
+	private final int[] chestArmor = {13736, 13740, 13742, 13744, 11726, 11720, 11732};
+	
 	public LastManStanding(Client c) {
 		this.c = c;
 		this.lmsH = new LastManStandingHandler(this.c);
@@ -228,10 +232,20 @@ public class LastManStanding {
 	
 	//test to make sure they get something will make array with all items for chest later 
 	public void getItemFromChest() {
-		c.startAnimation(832);
+		int randomWeapon = (int) Math.floor(Math.random()*chestWeapons.length);
+		int randomArmor = (int) Math.floor(Math.random()*chestArmor.length);
 		c.getItems().deleteItem(601, 1);
-		c.getItems().addItem(14484, 1);
+		c.getItems().addItem(chestWeapons[randomWeapon], 1);
+		c.getItems().addItem(chestArmor[randomArmor], 1);
+		c.startAnimation(832);
 		
+	}
+	
+	public void resetHealth() {
+		c.getPA().resetDamageDone();
+		c.specAmount = 10;
+		c.getItems().addSpecialBar(c.playerEquipment[c.playerWeapon]);
+		c.attackTimer = 10;
 	}
 	
 	public void checkWin() {

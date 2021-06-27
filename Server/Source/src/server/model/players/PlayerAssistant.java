@@ -837,6 +837,7 @@ public class PlayerAssistant{
 					c.getItems().dropAllItems();
 					c.getLMS().removeItems();
 					o.getLMS().giveKey();
+					o.getLMS().resetHealth();
 					o.getLMS().checkWin();
 				}
 			}
