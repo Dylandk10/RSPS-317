@@ -371,12 +371,22 @@ public class ItemAssistant {
 				}
 				return false;
 			} else {
-				resetItems(3214);
-				c.sendMessage("@red@Not enough space in your inventory.");
-				return false;
+				//if in lms make it a ground item for keys and equipment 
+				if(c.inLMS()) {
+					this.createGroundItem(item, c.getX(), c.getY(), amount);
+					resetItems(3214);
+					return false;
+					
+				//else it doesnt matter and reject the add item 	
+				} else {
+					resetItems(3214);
+					c.sendMessage("@red@Not enough space in your inventory.");
+					return false;
+				}
 			}
 		}
 	}
+	
 	
 	public String itemType(int item) {
 		if(Item.playerCape(item)) {
