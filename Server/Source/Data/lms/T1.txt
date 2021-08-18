@@ -1,9 +1,9 @@
-character-skill = 0	99	13034436
+character-skill = 0	99	13054338
 character-skill = 1	99	13034436
 character-skill = 2	99	13034436
-character-skill = 3	99	13034436
+character-skill = 3	99	13041067
 character-skill = 4	99	13034436
-character-skill = 5	99	13034436
+character-skill = 5	91	13034436
 character-skill = 6	99	13034436
 character-skill = 7	99	13034436
 character-skill = 8	99	13034436

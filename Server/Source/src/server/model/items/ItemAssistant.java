@@ -373,7 +373,8 @@ public class ItemAssistant {
 			} else {
 				//if in lms make it a ground item for keys and equipment 
 				if(c.inLMS()) {
-					this.createGroundItem(item, c.getX(), c.getY(), amount);
+					Server.itemHandler.createGroundItem(c, item, c.getX(), c.getY(), amount, c.getId());
+					//Server.itemHandler.createGroundItem(c, item, c.getX(), c.getY(), amount, c.getId());
 					resetItems(3214);
 					return false;
 					
