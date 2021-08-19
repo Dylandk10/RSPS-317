@@ -46,7 +46,7 @@ public class LastManStandingHandler {
 			characterFile = new File("./Data/lms/"+c.playerName+".txt");
 		
 			if(characterFile.createNewFile()) {
-				Misc.println("creating new lms file");
+				Misc.println("[LMS FILE] creating new lms file");
 				characterfileR = new BufferedWriter(new FileWriter("./Data/lms/"+c.playerName+".txt"));
 				for (int i = 0; i < c.playerLevel.length; i++) {
 					characterfileR.write("character-skill = ", 0, 18);
@@ -59,7 +59,6 @@ public class LastManStandingHandler {
 				}
 			
 			} else {
-				Misc.println("lms files already exist");
 				characterfileR = new BufferedWriter(new FileWriter("./Data/lms/"+c.playerName+".txt"));
 			
 				for (int i = 0; i < c.playerLevel.length; i++) {

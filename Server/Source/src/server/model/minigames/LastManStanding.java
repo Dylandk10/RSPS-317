@@ -256,6 +256,11 @@ public class LastManStanding {
 			this.removeItems();
 			this.removePlayer();
 			c.getPA().movePlayer(3095, 3486, 0);
+			c.faceUpdate(-1);
+			c.getPA().resetAnimation();
+			c.isSkulled = false;
+			c.headIconPk = -1;
+			c.skullTimer = -1;
 		}
 	}
 	
