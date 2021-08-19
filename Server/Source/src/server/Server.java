@@ -68,6 +68,7 @@ public class Server {
 	//public static FightCaves fightCaves = new FightCaves();
 	//public static WorldMap worldMap = new WorldMap();
 	//private static final WorkerThread engine = new WorkerThread();
+	public static LastManStandingManager lastManStandingManager = new LastManStandingManager();
 	
 	static {
 		if(!Config.SERVER_DEBUG) {
@@ -147,6 +148,7 @@ public class Server {
 				shopHandler.process();
 				objectManager.process();
 				pestControl.process();
+				lastManStandingManager.process();
 				cycleTime = engineTimer.elapsed();
 				sleepTime = cycleRate - cycleTime;
 				totalCycleTime += cycleTime;

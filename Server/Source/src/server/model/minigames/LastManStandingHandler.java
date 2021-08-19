@@ -29,12 +29,18 @@ public class LastManStandingHandler {
 	final public int MAX_GAME_SIZE = 4;
 	boolean saved = false;
 	private Client c;
+	private static boolean currentGame = false;
 	
 	private int[][] spawnPoints = {{2816, 3347},{2822, 3349}, {2816, 3333}, {2822, 3337}, {2848, 3337}, {2854, 3335}, {2866, 3383}, 
 									{2861, 3384}, {2847, 3387}, {2839, 3392}, {2808, 3378}, {2809, 3372}};
 	
 	public LastManStandingHandler(Client c) {
 		this.c = c;
+	}
+	
+	//for manager 
+	public LastManStandingHandler() {
+		Misc.println("LMS Manager accessing");
 	}
 	
 	
@@ -119,14 +125,16 @@ public class LastManStandingHandler {
 	
 	//init the match when ready main controller for handling the start of the game 
 	public void init(ArrayList<Player> list, ArrayList<Player> gameList) {
-		if(list.size() < MAX_GAME_SIZE) {
-			this.updatePlayersWaiting(list, "Added");
-		} else {
-			//logic to start game push players to playerList remove platers from playerListHold and give them all a tele x,y cords
+		this.updatePlayersWaiting(list, "Added");
+	}
+	
+	//to start the game called from the process in lmsManager
+	public void process(ArrayList<Player> list, ArrayList<Player> gameList) {
+		if (list.size() >= MAX_GAME_SIZE && !currentGame) {
 			this.addPlayersToGameList(list, gameList);
 			this.setSpawnLocation(gameList);
-			//update the left over players 
 			this.updatePlayersWaiting(list, "Removed");
+			this.currentGame = true;
 		}
 	}
 	
@@ -135,9 +143,13 @@ public class LastManStandingHandler {
 		for(int i = 0; i < list.size(); i++) {
 			Client client = (Client) list.get(i);
 			int length = list.size();
-			int playersRemaining = 12 - length;
-			client.sendMessage("@blu@Player " + str + length + "/12 players ready");
-			client.sendMessage("@blu@Still need " + playersRemaining + " players");
+			int playersRemaining = MAX_GAME_SIZE - length;
+			if (playersRemaining > 0) {
+				client.sendMessage("@blu@Player " + str + length + "/" + MAX_GAME_SIZE + " players ready");
+				client.sendMessage("@blu@Still need " + playersRemaining + " players");
+			} else {
+				client.sendMessage("@blu@Waiting for game to finish, players get Ready!");
+			}
 		}
 	}
 	
@@ -165,6 +177,9 @@ public class LastManStandingHandler {
 		}
 	}
 	
+	public void setCurrentGame(boolean state) {
+		this.currentGame = state;
+	}
 }
 
 

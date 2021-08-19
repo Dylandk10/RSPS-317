@@ -19,9 +19,9 @@ import server.util.Misc;
 
 public class LastManStanding {
 	//in game player list 
-	private static ArrayList<Player> playerList = new ArrayList<Player>();
+	protected static ArrayList<Player> playerList = new ArrayList<Player>();
 	//waiting area list 
-	private static ArrayList<Player> holdLMSList = new ArrayList<Player>();
+	protected static ArrayList<Player> holdLMSList = new ArrayList<Player>();
 	private LastManStandingHandler lmsH;
 	private Client c;
 	private Player player;
@@ -259,8 +259,10 @@ public class LastManStanding {
 			c.faceUpdate(-1);
 			c.getPA().resetAnimation();
 			c.isSkulled = false;
-			c.headIconPk = -1;
+			c.headIconPk = -1; 
 			c.skullTimer = -1;
+			this.resetHealth();
+			this.lmsH.setCurrentGame(false);
 		}
 	}
 	
