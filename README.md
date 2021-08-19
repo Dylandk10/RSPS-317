@@ -21,7 +21,8 @@ skull timer and enabling skull for PVP.\
 Fixed thieving and fishing skills\
 Fixed PVP combat thread to autocast and "Stack" damage\
 Better log out System\
-right clicking options and drop downs
+right clicking options and drop downs\
+server ticks for mini games
 
 ### What I Added
 Last Man Standing Minigame\
@@ -30,4 +31,5 @@ remove items for lms minigame\
 Added temp file system to hold data for players in last man standing\
 Added last man standing area\
 right clicking\
-Added stat booting for lms and revert stats for lms
+Added stat booting for lms and revert stats for lms\
+lms manager to the main server thread to handle the game start and one game at a time control
