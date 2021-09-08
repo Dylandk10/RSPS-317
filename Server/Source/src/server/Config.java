@@ -1,4 +1,4 @@
-package server;
+ package server;
 public class Config {
 
 	public static final boolean SERVER_DEBUG = false;//needs to be false for Real world to work

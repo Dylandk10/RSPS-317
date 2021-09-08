@@ -127,6 +127,8 @@ public class PlayerSave
 					//K3LLY
 					} else if (token.equals("quest1-part")) {
 						p.quest1Part = Integer.parseInt(token2);
+					} else if (token.equals("lmsScore")) {
+						p.lmsScore = Integer.parseInt(token2);
 					}
 					
 					break;
@@ -316,6 +318,9 @@ public class PlayerSave
 			characterfile.newLine();
 			characterfile.write("quest1-part = ", 0, 14);
 			characterfile.write(Integer.toString(p.quest1Part), 0, Integer.toString(p.quest1Part).length());
+			characterfile.newLine();
+			characterfile.write("lmsScore = ", 0, 11);
+			characterfile.write(Integer.toString(p.lmsScore), 0, Integer.toString(p.lmsScore).length());
 			characterfile.newLine();
 			characterfile.newLine();
 			

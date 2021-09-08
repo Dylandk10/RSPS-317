@@ -26,7 +26,7 @@ import server.model.players.Client;
 import server.model.players.Player;
 
 public class LastManStandingHandler {
-	final public int MAX_GAME_SIZE = 4;
+	final public int MAX_GAME_SIZE = 4; //ho wmany plays you want in the game max = 12!!!
 	boolean saved = false;
 	private Client c;
 	private static boolean currentGame = false;

@@ -263,6 +263,7 @@ public class LastManStanding {
 			c.skullTimer = -1;
 			this.resetHealth();
 			this.lmsH.setCurrentGame(false);
+			c.lmsScore += 1;
 		}
 	}
 	

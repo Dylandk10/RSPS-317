@@ -105,7 +105,8 @@ public abstract class Player {
 	killCount = 0,
 	//****************************************
 	//for main quest K3LLY
-	quest1Part = 0;
+	quest1Part = 0,
+	lmsScore;
 	
 	public String clanName, properName;
 	public int[] voidStatus = new int[5];
@@ -1574,6 +1575,11 @@ public abstract class Player {
 	//K3LLY
 	public int getQuest1Part() {
 		return quest1Part;
+	}
+	
+	//for writing lms high score 
+	public int getLMSScore() {
+		return lmsScore;
 	}
 
 
