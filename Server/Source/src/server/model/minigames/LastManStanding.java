@@ -248,6 +248,7 @@ public class LastManStanding {
 		c.attackTimer = 10;
 	}
 	
+	//checks the win of the game and handles the 
 	public void checkWin() {
 		if(this.playerList.size() == 1) {
 			c.forcedText = "I HAVE WON LMS!! I CAN'T BE STOPPED!";

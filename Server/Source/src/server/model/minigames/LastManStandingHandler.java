@@ -30,6 +30,9 @@ public class LastManStandingHandler {
 	boolean saved = false;
 	private Client c;
 	private static boolean currentGame = false;
+	//top 5 players for lms scores 
+	private static int[] hPlayerScore = new int[5];
+	private static String[] hPlayerName = new String[5];
 	
 	private int[][] spawnPoints = {{2816, 3347},{2822, 3349}, {2816, 3333}, {2822, 3337}, {2848, 3337}, {2854, 3335}, {2866, 3383}, 
 									{2861, 3384}, {2847, 3387}, {2839, 3392}, {2808, 3378}, {2809, 3372}};
@@ -38,9 +41,71 @@ public class LastManStandingHandler {
 		this.c = c;
 	}
 	
-	//for manager 
+	//for manager initalized right at the start of the server 
 	public LastManStandingHandler() {
-		Misc.println("LMS Manager accessing");
+		this.getLMSHighScores();
+	}
+	
+	//get the highscores for all lms players and save them into the hPlayerScore array and the hPlayerName array 
+	private void getLMSHighScores() {
+		String line = "";
+		String token = "";
+		String token2 = "";
+		String[] token3 = new String[3];
+		boolean EndOfFile = false;
+		BufferedReader characterfile = null;
+		try {	
+			characterfile = new BufferedReader(new FileReader("./Data/lms/HighScores/highscores.txt"));
+			
+			int i = 0;
+			while(EndOfFile == false && line != null && i < this.hPlayerName.length) {
+				
+				//try to read the file line by line 
+				try {
+					line = characterfile.readLine();
+				} catch(IOException ioexception1) { 
+					EndOfFile = true; 
+				}
+				
+				
+				line = line.trim();
+				int spot = line.indexOf("=");
+				if (spot > -1) {
+					token = line.substring(0, spot);
+					token = token.trim();
+					token2 = line.substring(spot + 1);
+					token2 = token2.trim();
+					this.hPlayerName[i] = token;
+					this.hPlayerScore[i] = Integer.parseInt(token2);
+				}
+				i++;
+			}
+		} catch (FileNotFoundException e) {
+			Misc.println("Character file is not found");
+		}
+		try { characterfile.close(); } catch(IOException ioexception) { Misc.println("Error closing character file."); }
+	}
+	
+	//check if its a highscore for lms scores 
+	public void isHighScore(int score, String Name) {
+		//if it does not beat the lowest score its not a highscore 
+		if(score < this.hPlayerScore[4]) {
+			return;
+		} else {
+			this.addToHighScore(score, name);
+		}
+	}
+	
+	//add name to highscores arrays 
+	private void addToHighScore(int score, String name) {
+		
+	}
+	
+	//for printingall the highscores to the consol 
+	private void printHighLMSHighScores() {
+		for(int i = 0; i < this.hPlayerScore.length; i++) {
+			Misc.println(this.hPlayerName[i] +" : " +this.hPlayerScore[i]);
+		}
 	}
 	
 	
