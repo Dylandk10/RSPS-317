@@ -265,6 +265,7 @@ public class LastManStanding {
 			this.resetHealth();
 			this.lmsH.setCurrentGame(false);
 			c.lmsScore += 1;
+			this.lmsH.isHighScore(c.lmsScore, c.playerName);
 		}
 	}
 	

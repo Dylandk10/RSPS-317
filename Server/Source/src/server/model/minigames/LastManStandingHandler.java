@@ -87,7 +87,7 @@ public class LastManStandingHandler {
 	}
 	
 	//check if its a highscore for lms scores 
-	public void isHighScore(int score, String Name) {
+	public void isHighScore(int score, String name) {
 		//if it does not beat the lowest score its not a highscore 
 		if(score < this.hPlayerScore[4]) {
 			return;
@@ -98,10 +98,43 @@ public class LastManStandingHandler {
 	
 	//add name to highscores arrays 
 	private void addToHighScore(int score, String name) {
-		
+		this.hPlayerName[4] = name;
+		this.hPlayerScore[4] = score;
+		this.sortHighScores();
+		this.saveLMSHighScores();
 	}
 	
-	//for printingall the highscores to the consol 
+	//save the highscores to file 
+	private void saveLMSHighScores() {
+		BufferedWriter lmsFile = null;
+		try {
+			lmsFile = new BufferedWriter(new FileWriter("./Data/lms/HighScores/highscores.txt"));
+			for(int i =0; i < this.hPlayerScore.length; i++) {
+				lmsFile.write(this.hPlayerName[i] + " = " + this.hPlayerScore[i]);
+			}
+		} catch(IOException e) {
+			Misc.println("Error saving LMS HighScores.");
+		}
+	}
+	
+	//bubble sort to sort the top names no longer then length =5 so bubble is fine
+	private void sortHighScores() {
+		int n = this.hPlayerScore.length;
+		for(int i = 0; i < n-1; i++) {
+			for(int j = 0; j < n-i-1; j++) {
+				if(this.hPlayerScore[j] > this.hPlayerScore[j+1]) {
+					int tempScore = this.hPlayerScore[j];
+					String tempName = this.hPlayerName[j];
+					this.hPlayerScore[j] = this.hPlayerScore[j+1];
+					this.hPlayerScore[j+1] = tempScore;
+					this.hPlayerName[j] = this.hPlayerName[j+1];
+					this.hPlayerName[j+1] = tempName;
+				}
+			}
+		}
+	}
+	
+	//for printing all the highscores to the consol 
 	private void printHighLMSHighScores() {
 		for(int i = 0; i < this.hPlayerScore.length; i++) {
 			Misc.println(this.hPlayerName[i] +" : " +this.hPlayerScore[i]);

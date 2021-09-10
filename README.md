@@ -15,6 +15,7 @@ Better log out System\
 better player vs player combat\
 game clipping during combat\
 in game trading\
+Last Man Standing Highscores
 
 ## What I Fixed
 skull timer and enabling skull for PVP.\
