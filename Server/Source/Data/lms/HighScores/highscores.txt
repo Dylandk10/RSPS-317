@@ -1,5 +1,5 @@
-username1 = 0
-username2 = 0
+T4 = 6
+T1 = 3
 username3 = 0
 username4 = 0
 username5 = 0

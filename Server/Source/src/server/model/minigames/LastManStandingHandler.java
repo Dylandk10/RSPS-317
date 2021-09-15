@@ -101,6 +101,7 @@ public class LastManStandingHandler {
 		this.hPlayerName[4] = name;
 		this.hPlayerScore[4] = score;
 		this.sortHighScores();
+		this.printHighLMSHighScores();
 		this.saveLMSHighScores();
 	}
 	
@@ -109,9 +110,11 @@ public class LastManStandingHandler {
 		BufferedWriter lmsFile = null;
 		try {
 			lmsFile = new BufferedWriter(new FileWriter("./Data/lms/HighScores/highscores.txt"));
-			for(int i =0; i < this.hPlayerScore.length; i++) {
+			for(int i = this.hPlayerScore.length-1; i >= 0 ; i--) {
 				lmsFile.write(this.hPlayerName[i] + " = " + this.hPlayerScore[i]);
+				lmsFile.newLine();
 			}
+			lmsFile.close();
 		} catch(IOException e) {
 			Misc.println("Error saving LMS HighScores.");
 		}

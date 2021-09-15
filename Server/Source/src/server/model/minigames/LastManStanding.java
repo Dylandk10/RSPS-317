@@ -37,16 +37,16 @@ public class LastManStanding {
 	}
 	
 	//add play inits the play for the game 
-	public void addPlayer() {
+	public synchronized void  addPlayer() {
 		holdLMSList.add(player);
 		lmsH.savePlayerStats();
-		boostStats();
 		c.inLMS = true;
 		c.specAmount = 10;
 		c.playerMagicBook = 1;
 		c.setSidebarInterface(6, 12855);
 		startingGear();
 		this.lmsH.init(holdLMSList, playerList);
+		boostStats();
 	}
 	
 	//remove player means they are no longer in the game 
@@ -254,6 +254,7 @@ public class LastManStanding {
 			c.forcedText = "I HAVE WON LMS!! I CAN'T BE STOPPED!";
 			c.forcedChatUpdateRequired = true;
 			c.updateRequired = true;
+			this.revertStats();
 			this.removeItems();
 			this.removePlayer();
 			c.getPA().movePlayer(3095, 3486, 0);
