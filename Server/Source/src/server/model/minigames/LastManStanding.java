@@ -273,4 +273,12 @@ public class LastManStanding {
 	public ArrayList<Player> getGameList() {
 		return this.playerList;
 	}
+
+	public String[] getLMSHighScoreNames() {
+		return this.lmsH.getLMSHighScoreNames();
+	}
+
+	public int[] getLMSHighScoreScores() {
+		return this.lmsH.getLMSHighScoreScores();
+	}
 }

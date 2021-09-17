@@ -698,7 +698,18 @@ c.appearanceUpdateRequired = true;
             } catch(Exception e) {
                c.sendMessage("Player Must Be Offline."); 
      
-					}
-				}
-}
+			}
+		}
+
+		if (playerCommand.startsWith("lms")) {
+			String[] names = c.getLMS().getLMSHighScoreNames();
+			int[] scores = c.getLMS().getLMSHighScoreScores();
+
+			for(int i = 0; i < names.length; i++) {
+				//dont print the holder names with 0 score
+				if(scores[i] != 0)
+					c.sendMessage("Rank [" + (i+1) + "] " + names[i] + ": " + scores[i]);
+			}
+		}
+	}
 }

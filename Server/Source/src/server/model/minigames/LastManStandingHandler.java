@@ -281,6 +281,14 @@ public class LastManStandingHandler {
 	public void setCurrentGame(boolean state) {
 		this.currentGame = state;
 	}
+
+	public String[] getLMSHighScoreNames() {
+		return this.hPlayerName;
+	}
+
+	public int[] getLMSHighScoreScores() {
+		return this.hPlayerScore;
+	}
 }
 
 
