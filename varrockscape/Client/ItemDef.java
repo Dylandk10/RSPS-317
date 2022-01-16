@@ -522,7 +522,7 @@ public final class ItemDef {
 
 		case 13305:
 			itemDef.actions = new String[5];
-			itemDef.actions[0] = "Summon";
+			itemDef.actions[0] = "Summon Lil Bandos";
 			itemDef.modelID = 3005;
 			itemDef.modelZoom = 1049;
 			itemDef.modelRotation1 = 545;
@@ -530,8 +530,8 @@ public final class ItemDef {
 			itemDef.modelOffset2 = 1;
 			itemDef.modelOffset1 = 3;
 			itemDef.stackable = false;
-			itemDef.name = "Obsidian titan pouch";
-			itemDef.description = "It's a Obsidian titan pouch.".getBytes();
+			itemDef.name = "Lil Bandos pouch";
+			itemDef.description = "It's a Lil bandos pouch.".getBytes();
 		break;
 
 		case 13306:

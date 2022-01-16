@@ -270,6 +270,36 @@ public class NPCHandler {
 		npcs[slot] = newNPC;
 	}
 	
+	
+	public void spawnPet(Client c, int npcType, int x, int y, int heightLevel, int WalkingType) {
+		// first, search for a free slot
+		int slot = -1;
+		for (int i = 1; i < maxNPCs; i++) {
+			if (npcs[i] == null) {
+				slot = i;
+				break;
+			}
+		}
+		if(slot == -1) {
+			//Misc.println("No Free Slot");
+			return;		// no free slot found
+		}
+		NPC newNPC = new NPC(slot, npcType);
+		newNPC.absX = x;
+		newNPC.absY = y;
+		newNPC.makeX = x;
+		newNPC.makeY = y;
+		newNPC.heightLevel = heightLevel;
+		newNPC.walkingType = WalkingType;
+		newNPC.spawnedBy = c.getId();
+		
+		if(npcType == 2657)
+			newNPC.forceChat("Rawrrr Lil Bandos is Born!");
+		npcs[slot] = newNPC;
+		this.petFollowPlayer(slot, c.playerId);
+	}
+	
+	
 	public void spawnNpc2(int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack, int defence) {
 		// first, search for a free slot
 		int slot = -1;
@@ -937,7 +967,7 @@ public class NPCHandler {
 					npcs[i].attackTimer--;
 				}
 					
-				if(npcs[i].spawnedBy > 0) { // delete summons npc
+				if(npcs[i].spawnedBy > 0 && npcs[i].npcType != 2657) { // delete summons npc
 					if(Server.playerHandler.players[npcs[i].spawnedBy] == null
 					|| Server.playerHandler.players[npcs[i].spawnedBy].heightLevel != npcs[i].heightLevel	
 					|| Server.playerHandler.players[npcs[i].spawnedBy].respawnTimer > 0 
@@ -1608,6 +1638,82 @@ public class NPCHandler {
 			npcs[i].randomWalk = true; 
 		   	npcs[i].underAttack = false;	
 		}
+	}
+	
+	
+	public void petFollowPlayer(int i, int playerId) {
+		
+		if (Server.playerHandler.players[playerId] == null) {
+			return;
+		}
+		
+		if (!followPlayer(i)) {
+			npcs[i].facePlayer(playerId);
+			return;
+		}
+		
+		int playerX = Server.playerHandler.players[playerId].absX;
+		int playerY = Server.playerHandler.players[playerId].absY;
+		npcs[i].randomWalk = false;
+		npcs[i].facePlayer(playerId);
+		
+//		if (goodDistance(npcs[i].getX(), npcs[i].getY(), playerX, playerY, distanceRequired(i)))
+//			return;
+		if((npcs[i].spawnedBy > 0) || ((npcs[i].absX < npcs[i].makeX) && (npcs[i].absX > npcs[i].makeX) && (npcs[i].absY < npcs[i].makeY) && (npcs[i].absY > npcs[i].makeY))) {
+			if(npcs[i].heightLevel == Server.playerHandler.players[playerId].heightLevel) {
+				if(Server.playerHandler.players[playerId] != null && npcs[i] != null) {
+					
+					if(playerY < npcs[i].absY) {
+						npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+						npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+					} else if(playerY > npcs[i].absY) {
+						npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+						npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+					} else if(playerX < npcs[i].absX) {
+						npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+						npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+					} else if(playerX > npcs[i].absX)  {
+						npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+						npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+					} else if(playerX == npcs[i].absX || playerY == npcs[i].absY) {
+						int o = Misc.random(3);
+						switch(o) {
+							case 0:
+							npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+							npcs[i].moveY = GetMove(npcs[i].absY, playerY+1);
+							break;
+							
+							case 1:
+							npcs[i].moveX = GetMove(npcs[i].absX, playerX);
+							npcs[i].moveY = GetMove(npcs[i].absY, playerY-1);
+							break;
+							
+							case 2:
+							npcs[i].moveX = GetMove(npcs[i].absX, playerX+1);
+							npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+							break;
+							
+							case 3:
+							npcs[i].moveX = GetMove(npcs[i].absX, playerX-1);
+							npcs[i].moveY = GetMove(npcs[i].absY, playerY);
+							break;
+						}	
+					}
+					int x = (npcs[i].absX + npcs[i].moveX);
+					int y = (npcs[i].absY + npcs[i].moveY);
+					npcs[i].facePlayer(playerId);
+					if (checkClipping(i))
+						npcs[i].getNextNPCMovement(i);
+					else {
+						npcs[i].moveX = 0;
+						npcs[i].moveY = 0;
+					}
+					npcs[i].facePlayer(playerId);
+			      	npcs[i].updateRequired = true;
+				}	
+			}
+		}
+		npcs[i].updateRequired = true;
 	}
 	
 	

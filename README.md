@@ -34,3 +34,6 @@ Added last man standing area\
 right clicking\
 Added stat booting for lms and revert stats for lms\
 lms manager to the main server thread to handle the game start and one game at a time control
+
+//new models
+https://www.rune-server.ee/runescape-development/rs2-client/models/699474-rel-bow-faerdhinen.html

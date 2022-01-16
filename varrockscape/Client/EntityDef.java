@@ -44,6 +44,29 @@ public final class EntityDef {
 	entityDef.aByte68 = 4;
     entityDef.description = "The mighty lord Bandos!".getBytes(); // NPC description
 	}
+	
+	//Lil bandos pet added by K3LLY
+	
+	if(i == 2657) { // NPC ID 
+    entityDef.actions = new String[5];
+    entityDef.actions[1] = "Pickup";
+    entityDef.models = new int[2]; // Number of models the NPC uses
+    int changedColors = 1; // Number of model colors changed on the NPC
+    entityDef.originalModelColors = new int[changedColors];
+    entityDef.modifiedModelColors = new int[changedColors];
+    entityDef.originalModelColors[0] = 61; // Original model color
+    entityDef.modifiedModelColors[0] = 926; // Changed model color
+    entityDef.models[0] = 27789; // 27789
+    entityDef.models[1] = 27785; // 27785
+    entityDef.name = "Lil Graardor"; // NPC name
+	entityDef.walkAnim = 7058;
+	entityDef.standAnim = 7059;
+	entityDef.anInt91 = 30; //width?
+	entityDef.anInt86 = 30; //height?
+	entityDef.aByte68 = 1;
+    entityDef.description = "The mighty Lil lord Bandos!".getBytes(); // NPC description
+	}
+	
 	if(i == 2551) { // NPC ID 
     entityDef.actions = new String[5];
     entityDef.actions[1] = "Attack";

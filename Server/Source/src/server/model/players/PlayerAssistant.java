@@ -342,7 +342,7 @@ public class PlayerAssistant{
 			}
 		}
 	}	
-	
+
 	public void sendFrame34a(int frame,int item,int slot,int amount){
         	c.outStream.createFrameVarSizeWord(34);
         	c.outStream.writeWord(frame);

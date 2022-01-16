@@ -2,7 +2,7 @@ package server.model.players.packets;
 
 import server.model.players.Client;
 import server.model.players.PacketType;
-
+import server.Server; //for spawning lil bandos
 
 
 /**
@@ -121,6 +121,15 @@ public class ClickItem implements PacketType {
 				c.sendMessage("your not so lucky... here's 100gp");
 			}
 		}
+		
+		//lil bandos pouch 
+		
+		if(itemId == 13305) {
+			Server.npcHandler.spawnPet(c, 2657, c.absX, c.absY, 0, 1);
+			c.sendMessage("You Have summoned the Lil Lord BANDOS!");
+		}
+		
+		
                 if(itemId == 550) {
                 c.getPA().showInterface(5392); 
                 c.sendMessage("You take a look at the newcomers map.");  

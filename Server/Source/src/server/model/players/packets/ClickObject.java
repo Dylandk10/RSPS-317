@@ -55,6 +55,8 @@ public class ClickObject implements PacketType {
 				case 75:
 					if(c.getItems().playerHasItem(601)) {
 						c.getLMS().getItemFromChest();
+					} else {
+						c.sendMessage("You need a bloody key!");
 					}
 					break;
 				

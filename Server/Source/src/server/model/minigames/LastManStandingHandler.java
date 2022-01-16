@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 import server.Server;
 import server.util.Misc;
 import server.model.players.Client;
@@ -236,8 +238,41 @@ public class LastManStandingHandler {
 			this.setSpawnLocation(gameList);
 			this.updatePlayersWaiting(list, "Removed");
 			this.currentGame = true;
+			this.randomItemSpawn(new RandomDrop(gameList), 20000, gameList);
 		}
 	}
+	
+	//call for random drops 
+	private void randomItemSpawn(Runnable runnable, int delay, ArrayList<Player> list) {
+		new Thread(() -> {
+			try {
+				Thread.sleep(delay);
+				runnable.run();
+			} catch( Exception e) {
+				Misc.println("Error thrown in randomItem Spawn within lms handler");
+			}
+		}).start();
+	} 
+	
+	
+	//private class for dropping the item
+	private class RandomDrop implements Runnable {
+		ArrayList list;
+		public RandomDrop(ArrayList<Player> list) {
+			this.list = list;
+		}
+		
+		public void run() {
+			int x = ThreadLocalRandom.current().nextInt(2800, 2875 +1);
+			int y = ThreadLocalRandom.current().nextInt(3331, 3399 +1);
+			for(int i = 0; i < list.size(); i++) {
+				Client c = (Client) list.get(i);
+				c.sendMessage("item spawnd at: X:" + x + " Y: " +y);
+			}
+		}
+	}
+	
+	
 	
 	//update all the players waiting
 	public void updatePlayersWaiting(ArrayList<Player> list, String str) {
@@ -289,6 +324,7 @@ public class LastManStandingHandler {
 	public int[] getLMSHighScoreScores() {
 		return this.hPlayerScore;
 	}
+	
 }
 
 

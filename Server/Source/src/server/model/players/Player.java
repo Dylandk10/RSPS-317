@@ -49,7 +49,7 @@ public abstract class Player {
 	accountFlagged = false,
 	msbSpec = false,
 	inLMS = false;
-	;
+	
 	
 	
 	public int 
