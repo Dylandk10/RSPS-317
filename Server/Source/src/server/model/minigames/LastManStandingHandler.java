@@ -238,7 +238,7 @@ public class LastManStandingHandler {
 			this.setSpawnLocation(gameList);
 			this.updatePlayersWaiting(list, "Removed");
 			this.currentGame = true;
-			this.randomItemSpawn(new RandomDrop(gameList), 20000, gameList);
+			this.randomItemSpawn(new RandomDrop(gameList), 40000, gameList);
 		}
 	}
 	
@@ -246,10 +246,12 @@ public class LastManStandingHandler {
 	private void randomItemSpawn(Runnable runnable, int delay, ArrayList<Player> list) {
 		new Thread(() -> {
 			try {
-				Thread.sleep(delay);
-				runnable.run();
+				while(this.currentGame) {
+					Thread.sleep(delay);
+					runnable.run();
+				}
 			} catch( Exception e) {
-				Misc.println("Error thrown in randomItem Spawn within lms handler");
+					Misc.println("Error thrown in randomItem Spawn within lms handler");
 			}
 		}).start();
 	} 
@@ -267,7 +269,7 @@ public class LastManStandingHandler {
 			int y = ThreadLocalRandom.current().nextInt(3331, 3399 +1);
 			for(int i = 0; i < list.size(); i++) {
 				Client c = (Client) list.get(i);
-				c.sendMessage("item spawnd at: X:" + x + " Y: " +y);
+				c.sendMessage("@red@item spawnd at: X:" + x + " Y: " +y);
 			}
 		}
 	}
