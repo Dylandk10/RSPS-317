@@ -15,7 +15,9 @@ Better log out System\
 better player vs player combat\
 game clipping during combat\
 in game trading\
-Last Man Standing Highscores
+Last Man Standing Highscores\
+multithreadingto spawn items in lms handler\
+npc pets and following path
 
 ## What I Fixed
 skull timer and enabling skull for PVP.\
@@ -35,5 +37,4 @@ right clicking\
 Added stat booting for lms and revert stats for lms\
 lms manager to the main server thread to handle the game start and one game at a time control
 
-//new models
-https://www.rune-server.ee/runescape-development/rs2-client/models/699474-rel-bow-faerdhinen.html
+
